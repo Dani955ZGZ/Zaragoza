@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Presentación: Casa en Venta</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* CSS GENERAL */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #fcfcfc;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* BARRA SUPERIOR (LAVANDA DE LA IMAGEN) */
+        .top-bar {
+            background-color: #f3e9f3;
+            height: 12px;
+            width: 100%;
+        }
+
+        /* CONTENEDOR PRINCIPAL */
+        .main-container {
+            flex: 1;
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 40px;
+            padding: 60px 8%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* COLUMNA DE TEXTO (IZQUIERDA) */
+        .info-column {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .main-title {
+            color: #e62128; /* Rojo de la imagen original */
+            font-size: 3rem;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            font-weight: 700;
+        }
+
+        .description {
+            font-size: 1.3rem;
+            line-height: 1.6;
+            text-decoration: underline; /* Mantenemos el subrayado */
+            text-decoration-color: #ddd;
+            text-underline-offset: 6px;
+        }
+
+        /* COLUMNA DE GALERÍA (DERECHA) */
+        .gallery-column {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .featured-photo {
+            width: 100%;
+            max-width: 450px;
+            height: auto;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+            position: relative;
+            background-color: #eee;
+            aspect-ratio: 1 / 1; /* Hacemos el área cuadrada */
+        }
+
+        .featured-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .upload-overlay {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 10px 18px;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            border: 1px solid #ddd;
+        }
+
+        .upload-overlay i {
+            color: #555;
+        }
+
+        /* FOOTER DE CONTACTO */
+        .contact-footer {
+            background-color: #fff;
+            padding: 30px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-top: 1px solid #eee;
+        }
+
+        .tel-info {
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+
+        .social-contacts {
+            display: flex;
+            gap: 15px;
+        }
+
+        /* BOTONES DE REDES SOCIALES (NORMALIZADOS) */
+        .contact-btn {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 25px;
+            border-radius: 25px;
+            text-decoration: none;
+            color: #fff;
+            font-weight: 600;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .contact-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .btn-whatsapp {
+            background-color: #25D366; /* Verde WP */
+        }
+
+        .btn-telegram {
+            background-color: #0088CC; /* Azul Telegram */
+        }
+
+        .email-info {
+            font-size: 1.2rem;
+            color: #555;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            text-decoration: none;
+        }
+
+        .email-info span {
+            color: #e62128; /* Rojo de la imagen original */
+        }
+
+        /* ADAPTACIÓN MÓVIL (RESPONSIVE) */
+        @media (max-width: 768px) {
+            .main-container {
+                grid-template-columns: 1fr;
+                text-align: center;
+                padding: 40px 5%;
+            }
+
+            .main-title {
+                font-size: 2.2rem;
+            }
+
+            .contact-footer {
+                flex-direction: column;
+                gap: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="top-bar"></div>
+
+    <main class="main-container">
+        <section class="info-column">
+            <h1 class="main-title">CASA EN VENTA</h1>
+            <p class="description">
+                Se vende esta casa ...etc... <br>
+                Ubicada en zona tranquila, con 3 dormitorios, garaje y un amplio patio trasero.
+            </p>
+        </section>
+
+        <section class="gallery-column">
+            <div class="featured-photo">
+                <img src="https://via.placeholder.com/450x450/eee/333?text=FOTO+PRINCIPAL" alt="Foto principal de la casa">
+                
+                <div class="upload-overlay">
+                    <i class="fas fa-plus"></i>
+                    <span>Galería de fotos</span>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="contact-footer">
+        <div class="tel-info">
+            Teléfono: <a href="tel:614130774">614130774</a>
+        </div>
+
+        <div class="social-contacts">
+            <a href="https://wa.me/614130774" class="contact-btn btn-whatsapp">
+                <i class="fab fa-whatsapp"></i>
+                WhatsApp
+            </a>
+            
+            <a href="https://t.me/BomberoPower" class="contact-btn btn-telegram">
+                <i class="fab fa-telegram-plane"></i>
+                Telegram
+            </a>
+        </div>
+
+        <div class="email-info">
+            E-MAIL
+            <a href="dani8969zgz@gmail.com"><i class="far fa-envelope"></i> <span>dani8969zgz@gmail.com</span></a>
+        </div>
+    </footer>
+
+</body>
+</html>
