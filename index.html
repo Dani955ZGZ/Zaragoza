@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Presentación Personal</title>
+    <title>Venta de Piso en Zaragoza</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         :root {
@@ -33,23 +33,17 @@
             max-width: 1100px;
             margin: 0 auto;
             padding: 20px;
-            display: flex;
-            flex-direction: column;
         }
 
-        /* DISEÑO DE ESCRITORIO (Se activa en pantallas grandes) */
+        /* DISEÑO DE ESCRITORIO */
         @media (min-width: 769px) {
             .main-container {
                 display: grid;
-                grid-template-columns: 1.2fr 1fr;
+                grid-template-columns: 1fr 1fr;
                 gap: 50px;
                 padding: 60px 5%;
-                align-items: center;
+                align-items: start;
             }
-        }
-
-        .info-column {
-            order: 2; /* En móvil el texto va después de la foto si quieres, o déjalo así */
         }
 
         .main-title {
@@ -65,44 +59,49 @@
             font-size: 1.1rem;
             color: #444;
             background: white;
-            padding: 20px;
+            padding: 25px;
             border-radius: 15px;
             box-shadow: 0 4px 15px rgba(0,0,0,0.05);
             border-left: 5px solid var(--rojo-pasion);
-        }
-
-        .gallery-column {
-            order: 1;
             margin-bottom: 30px;
-            display: flex;
-            justify-content: center;
         }
 
-        .featured-photo {
+        /* NUEVA GALERÍA DE FOTOS */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr; /* 2 columnas en móvil y PC */
+            gap: 15px;
+        }
+
+        .photo-item {
             width: 100%;
-            max-width: 400px;
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
             aspect-ratio: 1 / 1;
-            position: relative;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
         }
 
-        .featured-photo img {
+        .photo-item img {
             width: 100%;
             height: 100%;
             object-fit: cover;
+            transition: transform 0.3s;
+        }
+
+        .photo-item img:hover {
+            transform: scale(1.05);
         }
 
         /* FOOTER Y BOTONES */
         .contact-footer {
             background: white;
-            padding: 30px 20px;
+            padding: 40px 20px;
             border-top: 1px solid #eee;
             display: flex;
             flex-direction: column;
             gap: 20px;
             align-items: center;
+            text-align: center;
         }
 
         .social-contacts {
@@ -124,11 +123,6 @@
             color: #fff;
             font-weight: 700;
             font-size: 1.1rem;
-            transition: transform 0.2s;
-        }
-
-        .contact-btn:active {
-            transform: scale(0.98);
         }
 
         .btn-whatsapp { background-color: var(--whatsapp); }
@@ -143,12 +137,8 @@
 
         .email-link span { color: var(--rojo-pasion); }
 
-        /* AJUSTES ESPECÍFICOS PARA MÓVIL */
         @media (max-width: 768px) {
             .main-title { font-size: 1.5rem; text-align: center; }
-            .description { font-size: 1rem; }
-            .info-column { order: 1; }
-            .gallery-column { order: 2; }
         }
     </style>
 </head>
@@ -160,18 +150,23 @@
         <section class="info-column">
             <h1 class="main-title">Vendo Piso En Zaragoza</h1>
             <div class="description">
-                Busco vender mi vivienda de 120m3 urgentemente en Zaragoza <br><br>
-                Fotos y video en el contacto<br><br>
-                Si buscas un nuevo hogar para tu familia o un piso de solteros, seminuevo, no dudes en escribirme. <br><br>
-                <strong>Barrio Delicias/strong><br>
+                Busco vender mi vivienda de 120m² urgentemente en Zaragoza.<br><br>
+                Fotos y video disponibles por contacto privado.<br><br>
+                Si buscas un nuevo hogar para tu familia o un piso seminuevo, no dudes en escribirme.<br><br>
+                <strong>Barrio Delicias</strong><br>
                 Escríbeme Ahora⬇️
             </div>
         </section>
 
         <section class="gallery-column">
-            <div class="featured-photo">
-                <img src="piso1.jpg" alt="Foto de Dani">
-            </div>
+            <div class="gallery-grid">
+                <div class="photo-item">
+                    <img src="piso1.jpg" alt="Foto principal del piso">
+                </div>
+                <div class="photo-item">
+                    <img src="piso2.jpg" alt="Segunda foto del piso">
+                </div>
+                </div>
         </section>
     </main>
 
